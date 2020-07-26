@@ -90,8 +90,13 @@ app.delete('/api/listings/:id', (req, res) => {
 
 // Function to Validate Listing
 function validateListing(listing){
-    const schema = Joi.object({
-        title: Joi.string().min(3).required()
+    const schema = Joi.object(
+    {
+        title: Joi.string().min(3).required(),
+        city: Joi.string().min(3).required(),
+        phone: Joi.string().min(3).required(),
+        geoloc: Joi.string().min(3).required(),
+        website: Joi.string().min(3).required()
     });
 
     return schema.validate(listing);

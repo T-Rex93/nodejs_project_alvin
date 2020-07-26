@@ -96,7 +96,7 @@ app.post('/api/users', (req, res) => {
     console.log('Validation success and accepted');
 
     // Check if the Email already exists
-    console.log('Check existing email: '+req.body.email);
+    console.log('Check existing email: ' + req.body.email);
     const check_user = users.find( u => u.email === req.body.email );
     if (check_user) {
         console.log('Email: '+req.body.email+' is already registered');
